@@ -5,7 +5,9 @@
         <common-aside></common-aside>
       </el-aside>
       <el-container>
-        <el-header>Header</el-header>
+          <el-header>
+            <common-header></common-header>
+          </el-header>
         <el-main>Main</el-main>
       </el-container>
     </el-container>
@@ -14,10 +16,12 @@
 
 <script>
 import CommonAside from '../components/CommonAside.vue'
+import CommonHeader from '../components/CommonHeader.vue'
 export default {
   name: 'Index',
   components: {
-    CommonAside
+    CommonAside,
+    CommonHeader
   },
   data () {
     return {}
@@ -26,9 +30,6 @@ export default {
 </script>
 
 <style lang="less">
-.el-header {
-  background-color: #333;
-}
 .el-main {
   padding-top: 0;
 }
