@@ -1,5 +1,4 @@
 <template>
-  <div>
     <el-container style="height: 100%">
       <el-aside width="auto">
         <common-aside></common-aside>
@@ -8,10 +7,11 @@
           <el-header>
             <common-header></common-header>
           </el-header>
-        <el-main>Main</el-main>
+        <el-main>
+          <router-view></router-view>
+        </el-main>
       </el-container>
     </el-container>
-  </div>
 </template>
 
 <script>
@@ -32,5 +32,8 @@ export default {
 <style lang="less">
 .el-main {
   padding-top: 0;
+}
+.el-aside {
+  overflow: hidden;
 }
 </style>

@@ -1,15 +1,30 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Index from '../pages/index.vue'
+import VueRouter from 'vue-router'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'Index',
-      component: Index
-    }
-  ]
+const routes = [
+  {
+    path: '/',
+    component: () => import('../pages/index.vue'),
+    children: [
+      {
+        path: '/home',
+        name: 'home',
+        component: () => import('../pages/home.vue')
+      },
+      {
+        path: '/address',
+        name: 'address',
+        component: () => import('../pages/address.vue')
+      }
+    ]
+  }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  routes
 })
+
+export default router
