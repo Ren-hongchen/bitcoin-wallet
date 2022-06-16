@@ -9,6 +9,10 @@ const routes = [
     component: () => import('../pages/index.vue'),
     children: [
       {
+        path: '',
+        redirect: '/home'
+      },
+      {
         path: '/home',
         name: 'home',
         component: () => import('../pages/home.vue')
@@ -17,8 +21,18 @@ const routes = [
         path: '/address',
         name: 'address',
         component: () => import('../pages/address.vue')
+      },
+      {
+        path: '/account',
+        name: 'account',
+        component: () => import('../pages/account.vue')
       }
     ]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../pages/login.vue')
   }
 ]
 
