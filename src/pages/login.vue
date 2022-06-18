@@ -8,7 +8,7 @@
       <el-input v-model="form.password"></el-input>
     </el-form-item>
     <el-form-item>
-      <el-button type="primary" @click="onSubmit">登录</el-button>
+      <el-button type="primary" @click="onSubmit('form')">登录</el-button>
       <el-button @click="onCancle">取消</el-button>
     </el-form-item>
   </el-form>
@@ -57,8 +57,15 @@ export default {
     }
   },
   methods: {
-    onSubmit () {
-      console.log('submit!')
+    onSubmit (formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          alert('submit!')
+        } else {
+          console.log('error submit!!')
+          return false
+        }
+      })
     },
     onCancle () {
       this.$router.push({
