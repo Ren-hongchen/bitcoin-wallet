@@ -60,10 +60,8 @@ export default {
     onSubmit (formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          alert('submit!')
-        } else {
-          console.log('error submit!!')
-          return false
+          this.$http.post('http://localhost:8081/login', {
+          })
         }
       })
     },

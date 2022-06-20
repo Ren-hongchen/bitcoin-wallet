@@ -1,7 +1,7 @@
 <template>
-    <div>
-      <transaction></transaction>
-    </div>
+  <div>
+    <transaction></transaction>
+  </div>
 </template>
 
 <script>
