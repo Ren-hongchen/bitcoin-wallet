@@ -1,7 +1,11 @@
 <template>
   <el-table :data="tableData" :row-class-name="tableRowClassName" style="width: 100%">
     <el-table-column prop="date" label="日期" width="180"> </el-table-column>
-    <el-table-column prop="hash" label="Hash" width="600"> </el-table-column>
+    <el-table-column prop="hash" label="Hash" width="600" >
+      <template slot-scope="scope">
+        <a :href="'/tx/'+scope.row.hash">{{scope.row.hash}}</a>
+      </template>
+    </el-table-column>
     <el-table-column prop="amount" label="金额"> </el-table-column>
     <el-table-column prop="status" label="状态"> </el-table-column>
   </el-table>
